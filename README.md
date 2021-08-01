@@ -1,2 +1,0 @@
-# blazorAtoZpage
-blazorAtoZpage
