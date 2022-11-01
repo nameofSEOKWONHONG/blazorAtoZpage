@@ -19,11 +19,15 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 5.0.202
+          dotnet-version: 6.0.x
+          
+      # Install dotnet wasm buildtools workload
+      - name: Install .NET WASM Build Tools
+        run: dotnet workload install wasm-tools          
 
       # Publish the site
       - name: Publish
-        run: dotnet publish BlazorAtoZ.sln -c Release -o public -p:GHPages=true
+        run: dotnet publish BlazorAtoZ.sln -c:Release -p:GHPages=true -o dist/Web --nologo
 
       # Deploy the site
       - name: Deploy
