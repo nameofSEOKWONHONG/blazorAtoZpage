@@ -27,7 +27,7 @@ jobs:
 
       # Publish the site
       - name: Publish
-        run: dotnet publish BlazorAtoZ.sln -c:Release -p:GHPages=true -o dist/Web --nologo
+        run: dotnet publish BlazorAtoZ.sln -c Release -o public -p:GHPages=true
 
       # Deploy the site
       - name: Deploy
